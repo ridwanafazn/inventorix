@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventory CRUD</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <h1>Inventory Management</h1>
+
+    <section class="filter-section">
+      <label for="filter-category">Category</label>
+      <input list="categories" id="filter-category" placeholder="All or type category" />
+      <datalist id="categories"></datalist>
+      <button id="btn-filter">Filter</button>
+      <button id="btn-clear-filter">Clear</button>
+    </section>
+
+    <section class="table-section">
+      <table id="items-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Date of Entry</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows inserted by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="pagination-section">
+      <button id="prev-page" disabled>Prev</button>
+      <span id="page-info"></span>
+      <button id="next-page" disabled>Next</button>
+    </section>
+
+    <section class="form-section">
+      <h2 id="form-title">Add New Item</h2>
+      <form id="item-form">
+        <input type="hidden" id="item-id" />
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input required type="text" id="name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input list="categories" required type="text" id="category" name="category" />
+        </div>
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input required type="number" min="0" id="stock" name="stock" />
+        </div>
+        <div class="form-buttons">
+          <button type="submit" id="btn-submit">Save</button>
+          <button type="button" id="btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
